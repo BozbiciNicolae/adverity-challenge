@@ -1,19 +1,12 @@
 import React, { useEffect, useReducer } from 'react';
 import Papa from 'papaparse';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import ChartFilters from './chart-filters/ChartFilters';
 import LineChart from './charts/line/LineChart';
 
 import { reducer, initialState } from './state/reducer';
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: '30px'
-  }
-}));
-
+import useStyles from './App.styles';
 
 function App() {
   const classes = useStyles();

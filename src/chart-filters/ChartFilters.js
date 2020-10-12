@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Select from '@material-ui/core/Select';
@@ -10,26 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
-    background: theme.palette.primary.light
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-    maxWidth: 300,
-    width: '100%'
-  },
-  chips: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  chip: {
-    margin: 2,
-  },
-}));
+import useStyles from './ChartFilter.styles';
 
 function ChartFilters(props) {
   const [dataSources, setDataSources] = React.useState([]);
