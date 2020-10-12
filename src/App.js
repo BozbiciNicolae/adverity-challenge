@@ -21,13 +21,11 @@ function App() {
     let dataSourceNames = [];
     let campaignsNames = [];
 
-    let start = 0;
-
     Papa.parse('data.csv', {
       header: true,
       download: true,
       step: function(row) {
-        if(row.data.Campaign && row.data.Datasource && start < 1000) {
+        if(row.data.Campaign && row.data.Datasource) {
           parsed.byCampaign[row.data.Campaign] = parsed.byCampaign[row.data.Campaign]
           ? parsed.byCampaign[row.data.Campaign] = [ ...parsed.byCampaign[row.data.Campaign], row.data]
           : parsed.byCampaign[row.data.Campaign] = [ row.data ];
@@ -37,7 +35,6 @@ function App() {
             : parsed.byDataSource[row.data.Datasource] = [ row.data ];
 
           parsed.raw.push(row.data);
-          start++;
         }
       },
       complete: function() {
